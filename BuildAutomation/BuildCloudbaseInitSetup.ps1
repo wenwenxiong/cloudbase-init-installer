@@ -1,10 +1,10 @@
 Param(
   [string]$platform = "x64",
-  [string]$pythonversion = "3.6",
+  [string]$pythonversion = "3.10",
   [string]$SignX509Thumbprint = $null,
   [string]$release = $null,
   # Cloudbase-Init repo details
-  [string]$CloudbaseInitRepoUrl = "https://github.com/cloudbase/cloudbase-init.git",
+  [string]$CloudbaseInitRepoUrl = "https://github.com/wenwenxiong/cloudbase-init.git",
   [string]$CloudbaseInitRepoBranch = "master",
   # Use an already available installer or clone a new one.
   [switch]$ClonePullInstallerRepo = $true,
@@ -47,7 +47,7 @@ try
         # Clone a new installer repo no matter what.
         $cloudbaseInitInstallerDir = join-Path $basepath "cloudbase-init-installer"
         ExecRetry {
-            GitClonePull $cloudbaseInitInstallerDir "https://github.com/cloudbase/cloudbase-init-installer.git"
+            GitClonePull $cloudbaseInitInstallerDir "https://github.com/wenwenxiong/cloudbase-init-installer.git"
         }
     }
     else
